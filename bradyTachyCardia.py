@@ -1,8 +1,5 @@
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-import math
-from scipy.signal import argrelextrema
 from scipy.stats import threshold
 
 dataset = pd.read_csv("ecg_data.csv")
@@ -28,12 +25,6 @@ def HRinst(dataset):
             HRinst[i] = 60/ (time[int(peakInd[-1])] - time[int(peakInd[-2])])
     HRinst=np.column_stack((time,HRinst))
     return HRinst
-
-HRinst=HRinst(dataset)
-plt.plot(HRinst[:,0],HRinst[:,1])
-plt.title('Heart Rate')
-plt.show()
-print('hi')
 
 def bradyTachyCardia(HRinst):
     """Determines when bradycardia or tachycardia occurred in the ECG trace
