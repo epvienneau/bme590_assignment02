@@ -1,16 +1,13 @@
 import numpy as np
-import pandas as pd
 from scipy.stats import threshold
-
-dataset = pd.read_csv("ecg_data.csv")
-dataset=dataset.values
 
 def HRinst(dataset):
     """
-    Takes the input data from an ndarray consisting of an array of time instances in the first column and
-    an array of voltage values in the second column.
-    :param raw_data: (2 column ndarray, type: int)
-    :returns: ndarray of 2 columns. First column with time in s, second column with heart rate in BPM
+    Takes the input data of the time and voltage to convert it into an array with time and instantaneous heart rate.
+    :param: dataset: tuple of two elements. Each element is an ndarray (1xN).
+    :param: dataset: tuple of two elements. Each element is an ndarray (1xN).
+    :returns: ndarray of 2 columns. First column with time in s, second column with heart rate in BPM.
+        Each element in the ndarray is a float.
     """
 
     time = dataset[:][0]
@@ -23,6 +20,6 @@ def HRinst(dataset):
         if thresholded[i] > thresholded[i - 1] and thresholded[i] >= thresholded[i + 1]:
             peakInd = np.append(peakInd, int(i))
             HRinst[i] = 60/ (time[int(peakInd[-1])] - time[int(peakInd[-2])])
+    HRinst[-1]=HRinst[-2]
     HRinst=np.column_stack((time,HRinst))
     return HRinst
-HRinst(dataset)

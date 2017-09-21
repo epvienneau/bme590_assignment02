@@ -9,8 +9,8 @@ def HRinst(dataset):
     """
     Takes the input data from an ndarray consisting of an array of time instances in the first column and
     an array of voltage values in the second column.
-    :param raw_data: (2 column ndarray, type: int)
-    :returns: ndarray of 2 columns. First column with time in s, second column with heart rate in BPM
+    :param dataset: tuple with two elements. First element is a
+    :returns: ndarray of 2 columns. First column with time in s, second column with heart rate in BPM. Values in float
     """
 
     time = dataset[:, 0]

@@ -5,9 +5,9 @@ dataset = (np.arange(0,29),np.array([0,1,2,1,0,-1,10,10,3,2,0,4,5,0,9,10,11,10,0
 result = HRinst(dataset)
 
 def test_HRinst():
-
-   assert result.shape == dataset.shape
-   assert result == (np.array([[  0.,   0.],
+    assert type(result)== np.ndarray
+    assert result.shape[1]==2
+    assert np.all((result == (np.array([[  0.,   0.],
         [  1.,   0.],
         [  2.,   0.],
         [  3.,   0.],
@@ -35,5 +35,5 @@ def test_HRinst():
         [ 25.,   6.],
         [ 26.,   6.],
         [ 27.,   6.],
-        [ 28.,   0.]]))
-   test_HRinst()
+        [ 28.,   6.]]))))
+test_HRinst()
