@@ -3,6 +3,11 @@ import numpy as np
 
 
 def get_interval(mat,mins):
+    """ gets the length in items in an array of each interval of the time that is inputed in minutes
+    :param mat: (ndarray)
+    :param mins: (int)
+    :returns: length of the interval in float
+    """
     time = mat[:][0]
     hr = mat[:][1]
     secs = mins*60
@@ -20,6 +25,11 @@ def get_interval(mat,mins):
 
 def average(mat,mins):
 
+    """ gets the length in items in an array of each interval of the time that is inputed in minutes
+    :param mat: (ndarray)
+    :param mins: (int)
+    :returns: list of same length as instantaneous hr that gives average HR at each time point
+    """
     time = mat[:][0]
     hr = mat[:][1]
     secs = mins*60
@@ -34,3 +44,6 @@ def average(mat,mins):
             averages.append(curAve)
 
     return averages
+
+if __name__ == "__main__":
+    average('TestAve.csv',1)
