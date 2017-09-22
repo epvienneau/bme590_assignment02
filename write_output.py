@@ -16,3 +16,4 @@ def write_output(time_HRinst, HRavg, btc):
     for i in HRavg:
         row = time_HRinst[1][i] + "," + time_HRinst[2][i] + "," + HRavg[i] + "," + btc[i] + "\n"
         file.write(row)
+    file.close()
