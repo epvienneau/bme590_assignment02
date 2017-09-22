@@ -10,7 +10,7 @@ def write_output(time_HRinst, HRavg, btc):
         B means bradycardia, and N means normal
     :returns: nothing"""
 
-    file = open("assignment02_output", "w+")
+    file = open("assignment02_output.csv", "w+")
     header = "Time (s), Instantaneous Heart Rate, Average Heart Rate, Brady/Tachycardia Occurrence\n"
     file.write(header)
     for i in HRavg:
