@@ -7,7 +7,7 @@ def bradyTachyCardia(inputData):
     HRinst = inputData[1]   #  only care about heart rates, not when they happened
     bradyTachy = []  #  make new list to hold characters indicating brady/tachycardia or normal HR
     for i in HRinst:
-        if HRinst[i] == 0  # in this case, the heart hasn't beat yet so cannot determine state
+        if HRinst[i] == 0:  # in this case, the heart hasn't beat yet so cannot determine state
             bradyTachy.append('--')
         elif HRinst[i] <= 60:  # this indicates bradycardia, aka the heart is beating too slowly
             bradyTachy.append('B')
@@ -17,3 +17,4 @@ def bradyTachyCardia(inputData):
             bradyTachy.append('N')
 
     return bradyTachy
+
