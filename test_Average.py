@@ -7,7 +7,7 @@ import unittest
 tup = load_data('TestAve.csv')
 time = tup[0]
 hr = tup[1]
-mat = [time,hr]
+mat = np.array([time,hr])
 
 
 def test_seglen():
