@@ -17,4 +17,3 @@ def load_data(file):
     answer = (time,voltage)
     return answer
 
-print(load_data('data.csv'))
