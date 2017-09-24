@@ -13,6 +13,7 @@ def load_data(file):
 
     matrix = np.loadtxt(open(file), delimiter=",", skiprows=1)
     dims = np.shape(matrix)
+
     if len(dims)<2 or dims[1]!=2:
         raise ValueError("file must have two columns (time and voltage)")
 
@@ -24,3 +25,4 @@ def load_data(file):
 
 if __name__ == "__main__":
     load_data('ECGTest.csv')
+
