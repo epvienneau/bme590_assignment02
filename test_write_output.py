@@ -41,6 +41,4 @@ def test_correct_numbers():
     assert [data[3][i] == test_data[3][i] for i in range(len(data[3]))]
 
 
-if __name__ == "__main__":
-    test_file_format()
     test_correct_numbers()
