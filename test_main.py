@@ -7,4 +7,3 @@ def test_main():
     main('Test_ECG.csv', 3)
     timeStamp = os.path.getmtime('assignment02.csv')
     assert timeStamp > timeSinceEpoch  #asserts that new file was actually created/modified in calling of main function
-
