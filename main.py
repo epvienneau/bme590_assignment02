@@ -17,7 +17,7 @@ def main(filename,mins):
     data = load_data(filename)
     HRinst_output = HRinst(data)
     HRavg_output = average(HRinst_output,mins)
-    btc_output = bradyTachyCardia(HRinst_output)
+    btc_output = bradyTachyCardia(HRinst_output[:,1])
     write_output(HRinst_output, HRavg_output, btc_output)
 
 if __name__ == "__main__":

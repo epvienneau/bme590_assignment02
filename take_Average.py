@@ -8,11 +8,12 @@ def get_interval(mat,mins):
     :param mins: (int)
     :returns: length of the interval in float
     """
-    time = mat[:][0]
-    hr = mat[:][1]
+
+    time = mat[:,0]
+    hr = mat[:,1]
     secs = mins*60
     seglen = 0
-    for a in range(len(time)):
+    for a in range(time.shape[0]):
         if time[a]>secs:
             seglen = a + 1
             break
@@ -30,13 +31,13 @@ def average(mat,mins):
     :param mins: (int)
     :returns: list of same length as instantaneous hr that gives average HR at each time point
     """
-    time = mat[:][0]
-    hr = mat[:][1]
+    time = mat[:,0]
+    hr = mat[:,1]
     secs = mins*60
     seglen = get_interval(mat,mins)
     print(seglen)
     averages = []
-    for a in range(len(hr)):
+    for a in range(hr.shape[0]):
         if a<seglen:
             averages.append('calculating')
         else:
