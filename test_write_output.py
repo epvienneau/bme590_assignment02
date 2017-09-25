@@ -16,6 +16,7 @@ data.append(np.loadtxt(open('assignment02_output.csv'), delimiter=',', skiprows=
 data.append(np.loadtxt(open('assignment02_output.csv'), delimiter=',', skiprows=1, usecols=2, dtype=float))
 data.append(np.genfromtxt('assignment02_output.csv', delimiter=',', skip_header=1, usecols=3, dtype=str))
 
+
 def test_file_exists():
 
     try:
@@ -24,7 +25,6 @@ def test_file_exists():
         print("File does not exist!")  # Am I using this correctly here? Does try except belong in a unit test?
     finally:
         file.close()
-    # Assume at this point we've verified file exists somehow...
 
 
 def test_file_format():
@@ -35,7 +35,7 @@ def test_file_format():
 
 def test_correct_numbers():
 
-    assert [data[0][i]== test_data[0][i] for i in range(len(data[0]))]
+    assert [data[0][i] == test_data[0][i] for i in range(len(data[0]))]
     assert [data[1][i] == test_data[1][i] for i in range(len(data[1]))]
     assert [data[2][i] == test_data[2][i] for i in range(len(data[2]))]
     assert [data[3][i] == test_data[3][i] for i in range(len(data[3]))]
