@@ -6,6 +6,7 @@ from HRinst import HRinst
 from take_Average import average
 from take_Average import get_interval
 
+
 def main(filename,mins):
     """This file is the glue for our heart rate monitor software. It takes as input a file name for ECG data,
     it calculates the instantaneous and average heart rates and when brady- or tachycardia occur, and it writes this
@@ -17,8 +18,9 @@ def main(filename,mins):
     data = load_data(filename)
     HRinst_output = HRinst(data)
     HRavg_output = average(HRinst_output,mins)
-    btc_output = bradyTachyCardia(HRinst_output[:,1])
+    btc_output = bradyTachyCardia(HRinst_output[:, 1])
     write_output(HRinst_output, HRavg_output, btc_output)
 
+
 if __name__ == "__main__":
-    main('Test_ECG.csv',2)
+    main('Test_ECG.csv', 2)
