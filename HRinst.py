@@ -1,7 +1,9 @@
 import numpy as np
-from scipy.stats import threshold
+from scipy import stats
+
 
 def HRinst(dataset):
+
     """
     Takes the input data of the time and voltage to convert it into an array with time and instantaneous heart rate.
     :param: dataset: tuple of two elements. Each element is an ndarray (1xN).
@@ -12,7 +14,7 @@ def HRinst(dataset):
 
     time = dataset[:][0]
     voltage = dataset[:][1]
-    thresholded = threshold(voltage, 0.8 * voltage.max())
+    thresholded = stats.threshold(voltage, 0.8 * voltage.max())
     peakInd = np.array([0])
     HRinst = np.zeros(len(thresholded))
     for i in range(1, len(thresholded) - 1):

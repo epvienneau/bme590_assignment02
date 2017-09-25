@@ -10,7 +10,9 @@ def write_output(time_HRinst, HRavg, btc):
     file = open("assignment02_output.csv", "w+")
     header = "Time (s), Instantaneous Heart Rate, Average Heart Rate, Brady/Tachycardia Occurrence\n"
     file.write(header)
+    print(time_HRinst[:,0])
+    print(btc)
     for i, hr in enumerate(HRavg):
-        row = str(time_HRinst[0][i]) + "," + str(time_HRinst[1][i]) + "," + str(HRavg[i]) + "," + btc[i] + "\n"
+        row = str(time_HRinst[i,0]) + "," + str(time_HRinst[i,1]) + "," + str(HRavg[i]) + "," + btc[i] + "\n"
         file.write(row)
     file.close()
