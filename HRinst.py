@@ -17,7 +17,8 @@ def HRinst(dataset):
     thresholded = stats.threshold(voltage, 0.8 * voltage.max())
     peakInd = np.array([0])
     HRinst = np.zeros(len(thresholded))
-    for i in range(1, len(thresholded) - 1):
+
+    for i, val in range(1, len(thresholded) - 1):
         HRinst[i] = HRinst[i - 1]
         if thresholded[i] > thresholded[i - 1] and thresholded[i] >= thresholded[i + 1]:
             peakInd = np.append(peakInd, int(i))
