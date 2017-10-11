@@ -55,4 +55,4 @@ def average(hr,time,mins=1):
     return averages
 
 if __name__ == "__main__":
-    average('TestAve.csv',1)
+    average()
