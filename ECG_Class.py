@@ -4,12 +4,15 @@ class ECG_Class(object):
 
     It has many associated methods that process and display this data"""
 
-    def __init__(self, filename, avemins=1,outName="assignment02",lowerThresh=60,upperThresh=100):
+    def __init__(self, filename, avemins=1,outName="None",lowerThresh=60,upperThresh=100):
         from load_data import load_data
         from HRinst import HRinst
         self.name = filename[:-4]
         self.mins = avemins
-        self.outputfile = outName
+        if outName=="None":
+            self.outputfile = self.name + '_output.txt'
+        else:
+            self.outputfile = outName
         self.bradyT = lowerThresh
         self.tachyT = upperThresh
         self.data = load_data(self.name)
@@ -41,10 +44,8 @@ class ECG_Class(object):
         """
 
         from write_output import write_output
-        if self.outputfile == "assignment02":
-            output_name = self.name + '_output.txt'
 
         ave = self.avg()
         btc = self.btc()
-        return write_output(self.time, self.HRinst, ave, btc, output_name)
+        return write_output(self.time, self.HRinst, ave, btc, self.outputfile)
 
