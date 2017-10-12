@@ -7,10 +7,7 @@ def bradycardia(hrinst, lowerthresh):
     """
 
     import numpy as np
-    brady = [0] * np.size(hrinst)
-    for i in range(len(hrinst)):
-        if hrinst[i] <= lowerthresh:  # this indicates bradycardia, aka the heart is beating too slowly
-            brady[i] = 1
+    brady = np.where(hrinst <= lowerthresh, [1], [0])  # this indicates bradycardia- the heart is beating too slowly
     return brady
 
 
@@ -23,8 +20,5 @@ def tachycardia(hrinst, upperthresh):
     """
 
     import numpy as np
-    tachy = [0] * np.size(hrinst)
-    for i in range(len(hrinst)):
-        if hrinst[i] >= upperthresh:  # this indicates tachycardia, aka the heart is beating too quickly
-            tachy[i] = 1
+    tachy = np.where(hrinst >= upperthresh, [1], [0])  # this indicates tachycardia- the heart is beating too quickly
     return tachy
