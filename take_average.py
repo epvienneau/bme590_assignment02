@@ -11,8 +11,6 @@ def get_interval(time,mins=1):
     :returns: The length in data points of mins minutes
     """
 
-
-
     secs = mins*60
     seglen = 0
     for a in range(time.shape[0]):

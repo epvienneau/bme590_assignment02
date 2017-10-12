@@ -3,14 +3,9 @@ import numpy as np
 
 def load_data(file):
     """ Loads the data in a file
-
-    Takes in a csv file name and loads it (without the header) into a matrix that can be separated
-
-    Args:
-        file (string): The filename of the file where the ECG data is
-
-    Returns:
-        A matrix containing all the data from the file
+    
+    :param file: (string) The filename of the file where the ECG data is
+    :returns: A matrix containing all the data from the file
     """
 
     if not file.endswith('.csv'):
