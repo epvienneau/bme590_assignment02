@@ -13,15 +13,14 @@ def HRinst(dataset,secperunit=60):
 
     time = dataset[:][0]
     voltage = dataset[:][1]
-    thresholded = stats.threshold(voltage, 0.8 * voltage.max())
-    peakInd = np.array([0])
+    thresholded = stats.threshold(voltage, 0.5 * voltage.max())
     HRinst = np.zeros(len(thresholded))
 
-    is_increasing = np.roll(thresholded, 1) >= thresholded
+    is_increasing = np.roll(thresholded, 1) <= thresholded
     will_decrease = np.roll(thresholded, -1) < thresholded
     is_maximum = is_increasing * will_decrease
     peakInd = np.asarray(np.where(is_maximum))
-    
+
     for i,val in enumerate(thresholded):
         peaks=peakInd[peakInd<i]
         if i>peakInd[0][1]:
