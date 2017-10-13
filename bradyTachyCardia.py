@@ -3,8 +3,9 @@ import numpy as np
 
 def bradyTachyCardia(HRinst):
     """Determines when bradycardia or tachycardia occurred in the ECG trace
+
     :param HRinst: (ndarray)
-    :returns: list of same length as HRinst that indicates when brady- or tachycardia occurred
+    :returns: (list) of same length as HRinst that indicates when brady- or tachycardia occurred
     """
 
     bradyTachy = ['']*np.size(HRinst)

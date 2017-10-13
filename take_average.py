@@ -5,7 +5,6 @@ import numpy as np
 def get_interval(time,mins=1):
 
     """  Figures out how many points in mins minutes
-
     :param time: (ndarray) An array of times
     :param mins: (int) Number of minutes to take HR over
     :returns: The length in data points of mins minutes
@@ -27,7 +26,6 @@ def get_interval(time,mins=1):
 def average(hr,time,mins=1):
 
     """ Takes a running average of HR data
-
     :param hr: (ndarray) An array of heart rates
     :param mins: (int) Number of minutes to take HR over
     :returns: An ndarray of average heart rate at each time point
