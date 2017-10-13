@@ -48,13 +48,14 @@
 <dl class="function">
 <dt id="tachybradycardia.bradycardia">
 <code class="descclassname">tachybradycardia.</code><code class="descname">bradycardia</code><span class="sig-paren">(</span><em>hrinst</em>, <em>lowerthresh</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tachybradycardia.html#bradycardia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tachybradycardia.bradycardia" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>This module determines when in the ECG data there is bradycardia</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>hrinst</strong> &#8211; (ndarray) instantaneous heart rate- used to determine when bradycardia occurred in ECG trace</li>
-<li><strong>lowerthresh</strong> &#8211; lower threshold for determining bradycardia- user input or default 60 bpm</li>
+<li><strong>lowerthresh</strong> &#8211; (int or double) lower threshold for determining bradycardia- user input or default 60 bpm</li>
 </ul>
 </td>
 </tr>
@@ -68,13 +69,14 @@
 <dl class="function">
 <dt id="tachybradycardia.tachycardia">
 <code class="descclassname">tachybradycardia.</code><code class="descname">tachycardia</code><span class="sig-paren">(</span><em>hrinst</em>, <em>upperthresh</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/tachybradycardia.html#tachycardia"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tachybradycardia.tachycardia" title="Permalink to this definition">¶</a></dt>
-<dd><table class="docutils field-list" frame="void" rules="none">
+<dd><p>This module determines when in the ECG data there is tachycardia</p>
+<table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>hrinst</strong> &#8211; (ndarray) instantaneous heart rate- used to determine when tachycardia occurred in ECG trace</li>
-<li><strong>upperthresh</strong> &#8211; upper threshold for determining tachycardia- user input or default 100 bpm</li>
+<li><strong>upperthresh</strong> &#8211; (int or double) upper threshold for determining tachycardia- user input or default 100 bpm</li>
 </ul>
 </td>
 </tr>

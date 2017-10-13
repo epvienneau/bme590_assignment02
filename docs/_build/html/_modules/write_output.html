@@ -45,11 +45,12 @@
 <div class="viewcode-block" id="write_output"><a class="viewcode-back" href="../write_output.html#write_output.write_output">[docs]</a><span></span><span class="k">def</span> <span class="nf">write_output</span><span class="p">(</span><span class="n">time_HRinst</span><span class="p">,</span> <span class="n">HRavg</span><span class="p">,</span> <span class="n">btc</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Writes to text file time, instantaneous heart rate, average heart rate over user-specified interval, and when</span>
 <span class="sd">    brady- or tachycardia occurred in the ECG trace</span>
+
 <span class="sd">    :param time_HRinst: ndarray where first element is times and second element is instantaneous heart rates</span>
 <span class="sd">    :param HRavg: list of average heart rates</span>
 <span class="sd">    :param btc: list of characters to indicate patient status (-- means not enough data, T means tachycardia,</span>
 <span class="sd">        B means bradycardia, and N means normal</span>
-<span class="sd">    :returns: nothing&quot;&quot;&quot;</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;assignment02_output.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;w+&quot;</span><span class="p">)</span>
     <span class="n">header</span> <span class="o">=</span> <span class="s2">&quot;Time (s), Instantaneous Heart Rate, Average Heart Rate, Brady/Tachycardia Occurrence</span><span class="se">\n</span><span class="s2">&quot;</span>

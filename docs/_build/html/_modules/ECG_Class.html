@@ -46,9 +46,28 @@
 
     <span class="sd">&quot;&quot;&quot;This class treats a file containing ECG data as an object</span>
 
-<span class="sd">    It has many associated methods that process and display this data&quot;&quot;&quot;</span>
+<span class="sd">    It has many associated methods that process and display this data</span>
+<span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">avemins</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">outName</span><span class="o">=</span><span class="s2">&quot;None&quot;</span><span class="p">,</span><span class="n">lowerThresh</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span><span class="n">upperThresh</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Creates the variables associated with the class</span>
+
+<span class="sd">        :type filename: string</span>
+<span class="sd">        :param filename: the name of the csv file with the ECG data</span>
+
+<span class="sd">        :type avemins: double or int</span>
+<span class="sd">        :param avemins: number of minutes to compute the average heart rate</span>
+
+<span class="sd">        :type outName: string</span>
+<span class="sd">        :param outName: name of output file</span>
+
+<span class="sd">        :type lowerThresh: double or int</span>
+<span class="sd">        :param lowerThresh: lower threshold for bradycardia</span>
+
+<span class="sd">        :type upperThresh: double or int</span>
+<span class="sd">        :param upperThresh: upper threshold for tachycardia</span>
+<span class="sd">        &#39;&#39;&#39;</span>
         <span class="kn">from</span> <span class="nn">load_data</span> <span class="k">import</span> <span class="n">load_data</span>
         <span class="kn">from</span> <span class="nn">HRinst</span> <span class="k">import</span> <span class="n">HRinst</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">filename</span><span class="p">[:</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
@@ -65,11 +84,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">instHR</span> <span class="o">=</span> <span class="n">HRinst</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
 
 <div class="viewcode-block" id="ECG_Class.avg"><a class="viewcode-back" href="../ECG_Class.html#ECG_Class.ECG_Class.avg">[docs]</a>    <span class="k">def</span> <span class="nf">avg</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        :type return: tuple</span>
+<span class="sd">        :return: average heart rate (</span>
+<span class="sd">        &#39;&#39;&#39;</span>
         <span class="kn">from</span> <span class="nn">take_average</span> <span class="k">import</span> <span class="n">average</span>
 
         <span class="k">return</span> <span class="n">average</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instHR</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">time</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">mins</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="ECG_Class.bradyTachy"><a class="viewcode-back" href="../ECG_Class.html#ECG_Class.ECG_Class.bradyTachy">[docs]</a>    <span class="k">def</span> <span class="nf">bradyTachy</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<div class="viewcode-block" id="ECG_Class.btc"><a class="viewcode-back" href="../ECG_Class.html#ECG_Class.ECG_Class.btc">[docs]</a>    <span class="k">def</span> <span class="nf">btc</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="kn">from</span> <span class="nn">bradyTachyCardia</span> <span class="k">import</span> <span class="n">bradyTachyCardia</span>
 
         <span class="k">return</span> <span class="n">bradyTachyCardia</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">instHR</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">bradyT</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">tachyT</span><span class="p">)</span></div>

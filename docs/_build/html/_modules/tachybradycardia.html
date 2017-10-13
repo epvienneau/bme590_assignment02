@@ -45,8 +45,10 @@
 <div class="viewcode-block" id="bradycardia"><a class="viewcode-back" href="../tachybradycardia.html#tachybradycardia.bradycardia">[docs]</a><span></span><span class="k">def</span> <span class="nf">bradycardia</span><span class="p">(</span><span class="n">hrinst</span><span class="p">,</span> <span class="n">lowerthresh</span><span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This module determines when in the ECG data there is bradycardia</span>
+
 <span class="sd">    :param hrinst: (ndarray) instantaneous heart rate- used to determine when bradycardia occurred in ECG trace</span>
-<span class="sd">    :param lowerthresh: lower threshold for determining bradycardia- user input or default 60 bpm</span>
+<span class="sd">    :param lowerthresh: (int or double) lower threshold for determining bradycardia- user input or default 60 bpm</span>
 <span class="sd">    :return: brady: (ndarray) 1 for bradycardia, 0 otherwise</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -61,8 +63,10 @@
 <div class="viewcode-block" id="tachycardia"><a class="viewcode-back" href="../tachybradycardia.html#tachybradycardia.tachycardia">[docs]</a><span class="k">def</span> <span class="nf">tachycardia</span><span class="p">(</span><span class="n">hrinst</span><span class="p">,</span> <span class="n">upperthresh</span><span class="p">):</span>
 
     <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This module determines when in the ECG data there is tachycardia</span>
+
 <span class="sd">    :param hrinst: (ndarray) instantaneous heart rate- used to determine when tachycardia occurred in ECG trace</span>
-<span class="sd">    :param upperthresh: upper threshold for determining tachycardia- user input or default 100 bpm</span>
+<span class="sd">    :param upperthresh: (int or double) upper threshold for determining tachycardia- user input or default 100 bpm</span>
 <span class="sd">    :return: tachy: (ndarray) 1 for tachycardia, 0 otherwise</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 

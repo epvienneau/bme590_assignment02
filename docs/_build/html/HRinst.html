@@ -48,11 +48,23 @@
 <dl class="function">
 <dt id="HRinst.HRinst">
 <code class="descclassname">HRinst.</code><code class="descname">HRinst</code><span class="sig-paren">(</span><em>dataset</em>, <em>secperunit=60</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/HRinst.html#HRinst"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#HRinst.HRinst" title="Permalink to this definition">¶</a></dt>
-<dd><p>Takes the input data of the time and voltage to convert it into an array with time and instantaneous heart rate.
-:param dataset: (tuple) Each element is an ndarray (1xN).
-:returns: ndarray of 2 columns. First column with time in s, second column with heart rate in BPM.</p>
-<blockquote>
-<div>Each element in the ndarray is a float.</div></blockquote>
+<dd><p>Takes the input data of the time and voltage to convert it into an array with time and instantaneous heart rate.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>dataset</strong> &#8211; (tuple) Two elements, each a 1xN ndarray for time and voltage values respectively</li>
+<li><strong>secperunit</strong> &#8211; (int or double) Conversion from unit of time ndarray to seconds</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(ndarray) 2 columns. First column with time in s, second column with heart rate in BPM.
+Each element in the ndarray is a float.</p>
+</td>
+</tr>
+</tbody>
+</table>
 </dd></dl>
 
 </div>

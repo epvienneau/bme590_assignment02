@@ -50,8 +50,10 @@
 
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Takes the input data of the time and voltage to convert it into an array with time and instantaneous heart rate.</span>
-<span class="sd">    :param dataset: (tuple) Each element is an ndarray (1xN).</span>
-<span class="sd">    :returns: ndarray of 2 columns. First column with time in s, second column with heart rate in BPM.</span>
+
+<span class="sd">    :param dataset: (tuple) Two elements, each a 1xN ndarray for time and voltage values respectively</span>
+<span class="sd">    :param secperunit: (int or double) Conversion from unit of time ndarray to seconds</span>
+<span class="sd">    :returns: (ndarray) 2 columns. First column with time in s, second column with heart rate in BPM.</span>
 <span class="sd">        Each element in the ndarray is a float.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 

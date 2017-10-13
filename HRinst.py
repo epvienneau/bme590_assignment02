@@ -6,8 +6,10 @@ def HRinst(dataset,secperunit=60):
 
     """
     Takes the input data of the time and voltage to convert it into an array with time and instantaneous heart rate.
-    :param dataset: (tuple) Each element is an ndarray (1xN).
-    :returns: ndarray of 2 columns. First column with time in s, second column with heart rate in BPM.
+
+    :param dataset: (tuple) Two elements, each a 1xN ndarray for time and voltage values respectively
+    :param secperunit: (int or double) Conversion from unit of time ndarray to seconds
+    :returns: (ndarray) 2 columns. First column with time in s, second column with heart rate in BPM.
         Each element in the ndarray is a float.
     """
 
