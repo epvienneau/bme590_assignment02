@@ -7,8 +7,8 @@ def test_tachybradycardia():
     bradyanswers = np.array([[0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 1, 0, 0, 0, 0],
                             [0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0],
                             [0, 0, 0, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1]])
-    tachyanswers = np.array([[1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
-                            [1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0],
+    tachyanswers = np.array([[1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0],
+                            [1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0],
                             [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0]])
     for i in range(0, 3):
         bradylist = bradycardia(testerarray, lowerthresholds[i])
