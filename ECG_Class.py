@@ -1,43 +1,46 @@
 class ECG_Class(object):
-
     """This class treats a file containing ECG data as an object
 
     It has many associated methods that process and display this data
+
+    :type filename: string
+    :param filename: the name of the csv file with the ECG data
+
+    :type avemins: double or int
+    :param avemins: number of minutes to compute the average heart rate
+
+    :type outName: string
+    :param outName: name of output file
+
+    :type lowerThresh: double or int
+    :param lowerThresh: lower threshold for bradycardia
+
+    :type upperThresh: double or int
+    :param upperThresh: upper threshold for tachycardia
     """
 
-    def __init__(self, filename, avemins=1,outName="None",lowerThresh=60,upperThresh=100):
+    def __init__(self, filename, avemins=1, outName="_output.txt", lowerThresh=60, upperThresh=100):
         '''
         Creates the variables associated with the class
 
-        :type filename: string
-        :param filename: the name of the csv file with the ECG data
-
-        :type avemins: double or int
-        :param avemins: number of minutes to compute the average heart rate
-
-        :type outName: string
-        :param outName: name of output file
-
-        :type lowerThresh: double or int
-        :param lowerThresh: lower threshold for bradycardia
-
-        :type upperThresh: double or int
-        :param upperThresh: upper threshold for tachycardia
         '''
         from load_data import load_data
         from HRinst import HRinst
         self.name = filename[:-4]
         self.mins = avemins
-        if outName=="None":
-            self.outputfile = self.name + '_output.txt'
-        else:
-            self.outputfile = outName
         self.bradyT = lowerThresh
         self.tachyT = upperThresh
         self.data = load_data(self.name)
         self.time = self.data[:][0]
         self.voltage = self.data[:][1]
         self.instHR = HRinst(self.data)
+
+        if outName == "_output.txt":
+            self.outputfile = self.name + outName
+        elif outName[-4:]=='.txt':
+            self.outputfile = outName
+        else:
+            self.outputfile = outName + '.txt'
 
     def avg(self):
         '''
