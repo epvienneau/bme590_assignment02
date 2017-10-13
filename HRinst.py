@@ -33,5 +33,5 @@ def HRinst(dataset, secperunit=60, peak_threshold=0.5):
             hrinst[i]=0
 
     hrinst[-1]=hrinst[-2]
-    hrinst=np.column_stack((time,hrinst))
+    #hrinst=np.column_stack((time,hrinst))
     return hrinst

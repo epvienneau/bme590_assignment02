@@ -17,6 +17,7 @@ def load_data(file):
     if len(dims) < 2 or dims[1] != 2:
         raise ValueError("file must have two columns (time and voltage)")
 
+    matrix=(matrix[:,0],matrix[:,1])
     return matrix
 
 

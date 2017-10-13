@@ -30,7 +30,7 @@ class ECG_Class(object):
         self.mins = avemins
         self.bradyT = lowerThresh
         self.tachyT = upperThresh
-        self.data = load_data(self.name)
+        self.data = load_data(filename)
         self.time = self.data[:][0]
         self.voltage = self.data[:][1]
         self.instHR = HRinst(self.data)
@@ -53,12 +53,12 @@ class ECG_Class(object):
 
     def brady(self):
         from tachybradycardia import bradycardia
-        brady =  bradycardia(self.instHR,self.bradyT,self.tachyT)
+        brady =  bradycardia(self.instHR,self.bradyT)
         return brady
 
     def tachy(self):
         from tachybradycardia import tachycardia
-        tachy = tachycardia(self.instHR, self.bradyT, self.tachyT)
+        tachy = tachycardia(self.instHR, self.tachyT)
         return tachy
 
     def output(self):
@@ -76,4 +76,4 @@ class ECG_Class(object):
         b = self.brady()
         t = self.tachy()
 
-        return write_output(self.time, self.HRinst, ave, b, t, self.outputfile)
+        return write_output(self.time, self.instHR, ave, b, t, self.outputfile)
