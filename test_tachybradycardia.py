@@ -15,5 +15,5 @@ def test_tachybradycardia():
         tachylist = tachycardia(testerarray, upperthresholds[i])
         assert len(bradylist) == np.size(testerarray)
         assert len(tachylist) == np.size(testerarray)
-        assert all(bradylist == bradyanswers[i])
-        assert all(tachylist == tachyanswers[i])
+        assert bradylist == bradyanswers[i]
+        assert tachylist == tachyanswers[i]
