@@ -1,8 +1,10 @@
 def bradycardia(hrinst, lowerthresh):
 
     """
+    This module determines when in the ECG data there is bradycardia
+
     :param hrinst: (ndarray) instantaneous heart rate- used to determine when bradycardia occurred in ECG trace
-    :param lowerthresh: lower threshold for determining bradycardia- user input or default 60 bpm
+    :param lowerthresh: (int or double) lower threshold for determining bradycardia- user input or default 60 bpm
     :return: brady: (ndarray) 1 for bradycardia, 0 otherwise
     """
 
@@ -17,8 +19,10 @@ def bradycardia(hrinst, lowerthresh):
 def tachycardia(hrinst, upperthresh):
 
     """
+    This module determines when in the ECG data there is tachycardia
+
     :param hrinst: (ndarray) instantaneous heart rate- used to determine when tachycardia occurred in ECG trace
-    :param upperthresh: upper threshold for determining tachycardia- user input or default 100 bpm
+    :param upperthresh: (int or double) upper threshold for determining tachycardia- user input or default 100 bpm
     :return: tachy: (ndarray) 1 for tachycardia, 0 otherwise
     """
 
