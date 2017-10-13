@@ -8,7 +8,7 @@
     
     <title>ECG_Class module &#8212; Assignemnt02 1.0 documentation</title>
     
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -27,16 +27,27 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="HRinst module" href="HRinst.html" />
-    <link rel="prev" title="bme590_assignment02" href="index.html" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="prev" title="bme590_assignment02" href="index.html" /> 
   </head>
   <body role="document">
-  
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="HRinst.html" title="HRinst module"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="bme590_assignment02"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Assignemnt02 1.0 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
 
     <div class="document">
       <div class="documentwrapper">
@@ -47,10 +58,25 @@
 <span id="ecg-class-module"></span><h1>ECG_Class module<a class="headerlink" href="#module-ECG_Class" title="Permalink to this headline">¶</a></h1>
 <dl class="class">
 <dt id="ECG_Class.ECG_Class">
-<em class="property">class </em><code class="descclassname">ECG_Class.</code><code class="descname">ECG_Class</code><span class="sig-paren">(</span><em>filename</em>, <em>avemins=1</em>, <em>outName='None'</em>, <em>lowerThresh=60</em>, <em>upperThresh=100</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ECG_Class.html#ECG_Class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ECG_Class.ECG_Class" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="descclassname">ECG_Class.</code><code class="descname">ECG_Class</code><span class="sig-paren">(</span><em>filename</em>, <em>avemins=1</em>, <em>outName='_output.txt'</em>, <em>lowerThresh=60</em>, <em>upperThresh=100</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/ECG_Class.html#ECG_Class"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ECG_Class.ECG_Class" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal"><span class="pre">object</span></code></p>
 <p>This class treats a file containing ECG data as an object</p>
 <p>It has many associated methods that process and display this data</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>string</em>) &#8211; the name of the csv file with the ECG data</li>
+<li><strong>avemins</strong> (<em>double</em><em> or </em><em>int</em>) &#8211; number of minutes to compute the average heart rate</li>
+<li><strong>outName</strong> (<em>string</em>) &#8211; name of output file</li>
+<li><strong>lowerThresh</strong> (<em>double</em><em> or </em><em>int</em>) &#8211; lower threshold for bradycardia</li>
+<li><strong>upperThresh</strong> (<em>double</em><em> or </em><em>int</em>) &#8211; upper threshold for tachycardia</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
 <dl class="method">
 <dt id="ECG_Class.ECG_Class.avg">
 <code class="descname">avg</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/ECG_Class.html#ECG_Class.avg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#ECG_Class.ECG_Class.avg" title="Permalink to this definition">¶</a></dt>
@@ -92,15 +118,13 @@ filename (str): optional name of file if you don&#8217;t want</dd>
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper"><div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="index.html" title="previous chapter">bme590_assignment02</a></li>
-      <li>Next: <a href="HRinst.html" title="next chapter">HRinst module</a></li>
-  </ul></li>
-</ul>
-</div>
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">bme590_assignment02</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="HRinst.html"
+                        title="next chapter">HRinst module</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -122,20 +146,27 @@ filename (str): optional name of file if you don&#8217;t want</dd>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2017, Pablo Ortiz, Julia Ross, Emelina Vienneau.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.5.6</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
-      
-      |
-      <a href="_sources/ECG_Class.rst.txt"
-          rel="nofollow">Page source</a>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="HRinst.html" title="HRinst module"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="bme590_assignment02"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Assignemnt02 1.0 documentation</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2017, Pablo Ortiz, Julia Ross, Emelina Vienneau.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.5.6.
+    </div>
   </body>
 </html>
