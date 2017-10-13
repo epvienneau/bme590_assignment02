@@ -1,9 +1,10 @@
-from load_data import load_data
 import numpy as np
 
 
 def get_interval(mat,mins):
-    """ gets the length in items in an array of each interval of the time that is inputed in minutes
+    """
+    gets the length in items in an array of each interval of the time that is inputed in minutes
+
     :param mat: (ndarray)
     :param mins: (int)
     :returns: length of the interval in float
@@ -26,7 +27,9 @@ def get_interval(mat,mins):
 
 def average(mat,mins):
 
-    """ gets the length in items in an array of each interval of the time that is inputed in minutes
+    """
+    gets the length in items in an array of each interval of the time that is inputed in minutes
+
     :param mat: (ndarray)
     :param mins: (int)
     :returns: list of same length as instantaneous hr that gives average HR at each time point
