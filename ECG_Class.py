@@ -30,7 +30,7 @@ class ECG_Class(object):
 
         return bradyTachyCardia(self.instHR,self.bradyT,self.tachyT)
 
-    def output(self,filename="assignment02_output.csv"):
+    def output(self):
         """ Creates a file containing the output of these functions
 
         Runs all of the functions and outputs into a file of the specified filename
