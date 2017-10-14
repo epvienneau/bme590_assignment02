@@ -1,13 +1,11 @@
 from ECG_Class import ECG_Class
 from take_average import average
 from HRinst import HRinst
-from tachybradycardia import bradycardia
+from tachybradycardia import bradycardia, tachycardia
 
 
 def test_unpack():
     obj1 = ECG_Class('testclass.csv')
-    print(obj1.name)
-    print(type(obj1.data))
     assert obj1.name == 'testclass'
     assert len(obj1.time) == len(obj1.data[0][:])
     assert len(obj1.voltage) == len(obj1.data[0][:])
@@ -27,6 +25,7 @@ def test_average():
     assert obj2.mins == 2
     assert obj2.avg() == average(obj2.instHR,obj2.time,obj2.mins)
 
+
 def test_btc():
     obj2 = ECG_Class('testclass.csv')
     obj3 = ECG_Class('testclass.csv',lowerThresh=50,upperThresh=110)
@@ -34,7 +33,9 @@ def test_btc():
     assert obj2.tachyT == 100
     assert obj3.bradyT == 50
     assert obj3.tachyT == 110
-    #assert obj3.brady() == bradycardia()
+    assert obj3.brady() == bradycardia(obj3.instHR,obj3.bradyT)
+    assert obj2.tachy() == tachycardia(obj2.instHR,obj2.tachyT)
+
 
 def test_inst():
     import numpy as np
