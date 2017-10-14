@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = Assignemnt02
+SPHINXPROJ    = BME590Assignment02
 SOURCEDIR     = .
 BUILDDIR      = _build
 
