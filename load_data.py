@@ -31,6 +31,8 @@ def load_data(file):
     for i, item in enumerate(matrix[:, 1]):
         if item > 300:
             np.delete(matrix, [i][:])
+        elif item < 10:
+            np.delete(matrix,[i][:])
 
     matrix = (matrix[:, 0], matrix[:, 1])
     return matrix
