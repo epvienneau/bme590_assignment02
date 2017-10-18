@@ -25,4 +25,3 @@ class MyTestCase(unittest.TestCase):
 
     def test_seg(self):
         self.assertRaises(ValueError, ta.get_interval, mat, 1200)
-

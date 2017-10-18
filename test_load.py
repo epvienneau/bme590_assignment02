@@ -28,5 +28,3 @@ class MyTestCase(unittest.TestCase):
 
     def test_size(self):
         self.assertRaises(ValueError, load_data, 'onecol.csv')
-
-
