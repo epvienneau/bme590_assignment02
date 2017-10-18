@@ -7,7 +7,7 @@ def write_output(time, HRinst, HRavg, btc, filename="assignment02_output.csv"):
      is instantaneous heart rates
     :param HRavg: list of average heart rates
     :param btc: list of characters to indicate patient status (-- means not
-    enough data, T means tachycardia, B means bradycardia, and N means normal
+     enough data, T means tachycardia, B means bradycardia, and N means normal
     """
 
     file = open(filename, "w+")
