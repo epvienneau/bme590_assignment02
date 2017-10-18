@@ -9,6 +9,7 @@ def HRinst(dataset, secperunit=60, peak_threshold=98, filt=True):
      to seconds
     :param peak_threshold: (double) percentage of maximum peak to set
      thresholding
+    :param filt: (boolean) true if user wants to filter data, false if not
     :returns: (ndarray) 2 columns. First column with time in s, second column
      with heart rate in BPM. Each element in the ndarray is a float.
     """
