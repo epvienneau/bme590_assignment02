@@ -8,7 +8,7 @@ def bradyTachyCardia(HRinst):
     :returns: (list) of same length as HRinst that indicates when brady- or tachycardia occurred
     """
 
-    bradyTachy = ['']*np.size(HRinst)
+    bradyTachy = [''] * np.size(HRinst)
 
     for i, val in enumerate(HRinst):
         if val <= 60:  # this indicates bradycardia, aka the heart is beating too slowly

@@ -32,7 +32,7 @@ def load_data(file):
         if item > 300:
             np.delete(matrix, [i][:])
         elif item < 10:
-            np.delete(matrix,[i][:])
+            np.delete(matrix, [i][:])
 
     matrix = (matrix[:, 0], matrix[:, 1])
     return matrix
@@ -40,4 +40,3 @@ def load_data(file):
 
 if __name__ == "__main__":
     load_data('ECGTest.csv')
-
