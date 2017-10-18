@@ -53,5 +53,4 @@ def load_data(file):
 
 
 if __name__ == "__main__":
-    load_data('test_data30.csv')
-
+    load_data('ECGTest.csv')
