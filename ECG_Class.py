@@ -19,19 +19,25 @@ class ECG_Class(object):
     :param upperThresh: upper threshold for tachycardia
     """
 
-    def __init__(self, filename, avemins=1, outName="_output.txt",
-                 lowerThresh=60, upperThresh=100):
+    def __init__(self, filename='api', avemins=1, outName="_output.txt",
+                 lowerThresh=60, upperThresh=100, dat='null'):
         '''
         Creates the variables associated with the class
 
         '''
         from load_data import load_data
         from HRinst import HRinst
-        self.name = filename[:-4]
+        if filename == 'api':
+            self.name = 'InputData'
+        else:
+            self.name = filename[:-4]
         self.mins = avemins
         self.bradyT = lowerThresh
         self.tachyT = upperThresh
-        self.data = load_data(filename)
+        if filename != 'api':
+            self.data = load_data(filename)
+        else:
+            self.data = dat
         self.time = self.data[:][0]
         self.voltage = self.data[:][1]
         self.instHR = HRinst(self.data)
