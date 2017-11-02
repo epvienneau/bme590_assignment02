@@ -1,4 +1,4 @@
-from HRinst import HRinst
+from .HRinst import HRinst
 import numpy as np
 
 dataset = (np.arange(0, 29), np.array([0, 1, 7, 1, 0, -1, 10, 10, 3, 2, 0, 4,

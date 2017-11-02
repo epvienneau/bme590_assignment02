@@ -1,6 +1,6 @@
 import numpy as np
 
-from write_output import write_output
+from .write_output import write_output
 
 time = np.transpose(np.array([1., 2., 3., 4., 5., 6., 7., 8., 9., 10.]))
 HRinst = np.transpose(np.array([0., 80., 90., 90., 85., 80., 70., 68., 57.,
