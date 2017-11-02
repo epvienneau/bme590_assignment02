@@ -1,4 +1,4 @@
-def HRinst(dataset, secperunit=60, peak_threshold=65, filt=False):
+def HRinst(dataset, secperunit=60, peak_threshold=98, filt=True):
     """
     Takes the input data of the time and voltage to convert it into an array
     with time and instantaneous heart rate.
