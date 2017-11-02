@@ -13,8 +13,8 @@ mat = np.transpose(np.array([time, hr]))
 
 def test_seglen():
 
-    assert get_interval(time, 1) == 60
-    assert get_interval(time, 3) == 180
+    assert get_interval(time, 60) == 60
+    assert get_interval(time, 180) == 180
 
 
 def test_output():
