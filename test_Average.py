@@ -1,5 +1,6 @@
-from load_data import load_data
-import take_average as ta
+from .load_data import load_data
+from .take_average import get_interval
+from .take_average import average
 import numpy as np
 import pytest
 import unittest
@@ -12,16 +13,16 @@ mat = np.transpose(np.array([time, hr]))
 
 def test_seglen():
 
-    assert ta.get_interval(time, 1) == 60
-    assert ta.get_interval(time, 3) == 180
+    assert get_interval(time, 1) == 60
+    assert get_interval(time, 3) == 180
 
 
 def test_output():
 
-    assert type(ta.average(hr, time, 3)) is list
+    assert type(average(hr, time, 3)) is list
 
 
 class MyTestCase(unittest.TestCase):
 
     def test_seg(self):
-        self.assertRaises(ValueError, ta.get_interval, mat, 1200)
+        self.assertRaises(ValueError, get_interval, mat, 1200)

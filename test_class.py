@@ -1,7 +1,7 @@
-from ECG_Class import ECG_Class
-from take_average import average
-from HRinst import HRinst
-from tachybradycardia import bradycardia, tachycardia
+from .ECG_Class import ECG_Class
+from .take_average import average
+from .HRinst import HRinst
+from .tachybradycardia import bradycardia, tachycardia
 from glob import glob
 
 files = glob('test_data*.csv')
