@@ -61,3 +61,4 @@ def data_filter(voltage, num_coef=8, hfreq=0.125, lfreq=0.0125):
     band_filt = signal.filtfilt(c, d, low_filt)
 
     return band_filt
+

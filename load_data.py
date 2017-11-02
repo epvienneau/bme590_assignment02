@@ -1,4 +1,4 @@
-def load_data(file):
+def load_data(file='frompost'):
     """ Loads the data in a file
 
     :param file: (string) The filename of the file where the ECG data is
@@ -6,7 +6,6 @@ def load_data(file):
     """
     import numpy as np
     import csv
-
     if not file.endswith('.csv'):
         raise ValueError("file must be in .csv format")
     try:

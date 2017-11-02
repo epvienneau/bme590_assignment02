@@ -1,4 +1,4 @@
-from bradyTachyCardia import bradyTachyCardia as BTC
+from .bradyTachyCardia import bradyTachyCardia as BTC
 import numpy as np
 
 
