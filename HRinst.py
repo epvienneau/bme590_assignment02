@@ -1,4 +1,4 @@
-def HRinst(dataset, secperunit=60, peak_threshold=98, filt=True):
+def HRinst(dataset, secperunit=60, peak_threshold=65, filt=False):
     """
     Takes the input data of the time and voltage to convert it into an array
     with time and instantaneous heart rate.
@@ -61,3 +61,4 @@ def data_filter(voltage, num_coef=8, hfreq=0.125, lfreq=0.0125):
     band_filt = signal.filtfilt(c, d, low_filt)
 
     return band_filt
+
