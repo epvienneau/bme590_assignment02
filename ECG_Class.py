@@ -25,8 +25,8 @@ class ECG_Class(object):
         Creates the variables associated with the class
 
         """
-        from load_data import load_data
-        from HRinst import HRinst
+        from .load_data import load_data
+        from .HRinst import HRinst
         if type(user_input) == str:
             self.name = user_input[:-4]
         else:
@@ -55,12 +55,12 @@ class ECG_Class(object):
         :type: tuple
         :return: average heart rate
         """
-        from take_average import average
+        from .take_average import average
 
         return average(self.instHR, self.time, self.mins)
 
     def brady(self, hr_type='inst'):
-        from tachybradycardia import bradycardia
+        from .tachybradycardia import bradycardia
         if hr_type == 'inst':
             brady = bradycardia(self.instHR, self.bradyT)
         else:
@@ -68,7 +68,7 @@ class ECG_Class(object):
         return brady
 
     def tachy(self, hr_type='inst'):
-        from tachybradycardia import tachycardia
+        from .tachybradycardia import tachycardia
         if hr_type == 'inst':
             tachy = tachycardia(self.instHR, self.tachyT)
         else:
@@ -79,7 +79,7 @@ class ECG_Class(object):
         """ Creates a file containing the output of these functions
         """
 
-        from write_output import write_output
+        from .write_output import write_output
 
         ave = self.avg()
         b = self.brady()
