@@ -86,3 +86,4 @@ class ECG_Class(object):
         t = self.tachy()
 
         return write_output(self.time, self.instHR, ave, b, t, self.outputfile)
+

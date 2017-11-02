@@ -1,9 +1,9 @@
-def bradycardia(hrinst, lowerthresh):
+def bradycardia(hr, lowerthresh):
 
     """
     This module determines when in the ECG data there is bradycardia
 
-    :param hrinst: (ndarray) instantaneous heart rate- used to determine when
+    :param hr: (ndarray) heart rate- used to determine when
      bradycardia occurred in ECG trace
     :param lowerthresh: (int or double) lower threshold for determining
      bradycardia- user input or default 60 bpm
@@ -11,20 +11,20 @@ def bradycardia(hrinst, lowerthresh):
     """
 
     import numpy as np
-    brady = [0] * np.size(hrinst)
-    for i in range(len(hrinst)):
-        if hrinst[i] <= lowerthresh:  # this indicates bradycardia,
+    brady = [0] * np.size(hr)
+    for i in range(len(hr)):
+        if hr[i] <= int(lowerthresh):  # this indicates bradycardia,
             #  aka the heart is beating too slowly
             brady[i] = 1
     return brady
 
 
-def tachycardia(hrinst, upperthresh):
+def tachycardia(hr, upperthresh):
 
     """
     This module determines when in the ECG data there is tachycardia
 
-    :param hrinst: (ndarray) instantaneous heart rate-
+    :param hr: (ndarray) heart rate-
      used to determine when tachycardia occurred in ECG trace
     :param upperthresh: (int or double) upper threshold for determining
      tachycardia- user input or default 100 bpm
@@ -32,9 +32,10 @@ def tachycardia(hrinst, upperthresh):
     """
 
     import numpy as np
-    tachy = [0] * np.size(hrinst)
-    for i in range(len(hrinst)):
-        if hrinst[i] >= upperthresh:  # this indicates tachycardia,
+    tachy = [0] * np.size(hr)
+    for i in range(len(hr)):
+        if hr[i] >= int(upperthresh):  # this indicates tachycardia,
             #  aka the heart is beating too quickly
             tachy[i] = 1
     return tachy
+
