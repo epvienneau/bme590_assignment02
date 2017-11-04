@@ -31,15 +31,21 @@ def HRinst(dataset, secperunit=60, peak_threshold=98, filt=True):
     is_maximum = is_increasing * will_decrease
     peakInd = np.asarray(np.where(is_maximum))
 
-    for i, val in enumerate(thresholded):
-        peaks = peakInd[peakInd < i]
-        if i > peakInd[0][1]:
-            hrinst[i] = \
-                secperunit / (time[int(peaks[-1])] - time[int(peaks[-2])])
-        else:
-            hrinst[i] = 0
+    try:
+        for i, val in enumerate(thresholded):
+            peaks = peakInd[peakInd < i]
+            if i > peakInd[0][1]:
+                hrinst[i] = \
+                    secperunit / (time[int(peaks[-1])] - time[int(peaks[-2])])
+            else:
+                hrinst[i] = 0
 
-    hrinst[-1] = hrinst[-2]
+        if hrinst[i] > 200:
+            raise ValueError('The read heart rates are too high, check the units of your input')
+        hrinst[-1] = hrinst[-2]
+    except:
+        raise ValueError("Couldn't find any peaks, try lowering the value peak_threshold")
+
     return hrinst
 
 
